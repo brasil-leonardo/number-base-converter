@@ -1,6 +1,25 @@
-body {
+@font-face {
+    font-family: "Abel";
+    src: url(assets/fonts/Abel-Regular.ttf);
+}
+
+* {
     margin: 0;
-    height: 80vh;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Abel";
+}
+
+th > label {
+    font-family: "Abel";
+}
+
+.container {
     width: 50dvw;
-    background-color: red;
+    height: 80dvh;
+    margin: 10dvh 25dvw;
+    padding: 15px;
+    box-sizing: border-box;
 }
