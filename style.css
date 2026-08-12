@@ -12,8 +12,20 @@ h1 {
     font-family: "Abel";
 }
 
+table {
+    border: 1px solid #CCC;
+}
+
+th {
+    text-align: start;
+}
+
 th > label {
     font-family: "Abel";
+}
+
+th, td {
+    padding: 10px;
 }
 
 .container {
