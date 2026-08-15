@@ -10,43 +10,49 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="container">
         <div class="session-container">
             <h1>Number Base Converter</h1>
             <p>
-                This project is a numeric base converter, created as a simple and practical program to help programmers in
-                their daily work. It is hable to convert numbers in <strong>binary</strong>, <strong>octal</strong>, <strong>decimal</strong> and <strong>hexadecimal</strong> numerical bases.
+                This project is a simple and practical <strong>Number Base Converter</strong> 
+                designed to help programmers and students work with different 
+                numerical systems. It allows you to easily convert numbers 
+                between <strong>binary</strong>, <strong>octal</strong>, <strong>decimal</strong>, and <strong>hexadecimal</strong> bases.
             </p>
         </div>
         <div class="session-container">
-            <h2>Steps to use</h2>
+            <h2>How to Use</h2>
             <ol>
-                <li>Select the numerical base who you like to convert;</li>
-                <li>Write the number in right field;</li>
-                <li>See the number automacticaly converted in yours respectives base fields.</li>
+                <li>Select the numerical base you want to convert from.</li>
+                <li>Enter the number in the corresponding input field.</li>
+                <li>The number will be automatically converted and displayed in the other numerical bases.</li>
             </ol>
+            <p>
+                The converter provides a quick and convenient way to work with 
+                different number systems without the need for manual calculations.
+            </p>
         </div>
-        <div class="session-container">
+        <div id="table-container" class="session-container">
             <table>
                 <tr>
                     <th><label for="binary">Binary</label></th>
-                    <td class="selector-column"><input type="radio" name="input-base" id="binary"></td>
-                    <td><input type="text" name="binary-value" id="binary-value"></td>
+                    <td class="input-selector"><input checked type="radio" name="input-base" id="binary"></td>
+                    <td><input type="text" name="input-value" id="binary-value"></td>
                 </tr>
                 <tr>
                     <th><label for="octal">Octal</label></th>
-                    <td class="selector-column"><input type="radio" name="input-base" id="octal"></td>
-                    <td><input type="text" name="octal-value" id="octal-value"></td>
+                    <td class="input-selector"><input type="radio" name="input-base" id="octal"></td>
+                    <td><input type="text" name="input-value" id="octal-value"></td>
                 </tr>
                 <tr>
                     <th><label for="decimal">Decimal</label></th>
-                    <td class="selector-column"><input type="radio" name="input-base" id="decimal"></td>
-                    <td><input type="text" name="decimal-value" id="decimal-value"></td>
+                    <td class="input-selector"><input type="radio" name="input-base" id="decimal"></td>
+                    <td><input type="text" name="input-value" id="decimal-value"></td>
                 </tr>
                 <tr>
                     <th><label for="hexadecimal">Hexadecimal</label></th>
-                    <td class="selector-column"><input type="radio" name="input-base" id="hexadecimal"></td>
-                    <td><input type="text" name="hexadecimal-value" id="hexadecimal-value"></td>
+                    <td class="input-selector"><input type="radio" name="input-base" id="hexadecimal"></td>
+                    <td><input type="text" name="input-value" id="hexadecimal-value"></td>
                 </tr>
             </table>
         </div>
