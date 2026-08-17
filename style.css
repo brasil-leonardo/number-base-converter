@@ -24,7 +24,7 @@ ol {
 table {
     width: 100%;
     border: 1px solid;
-    box-sizing: border-box;
+    padding: 15px;
     border-collapse: collapse;
 }
 
@@ -35,19 +35,24 @@ tr:nth-child(even) {
 th {
     width: 1%;
     text-align: left;
+    vertical-align: middle;
     padding-inline: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 td {
+    vertical-align: middle;
     padding-inline: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-input[type="text"] {
+input[type=text] {
     width: 100%;
+    text-align: end;
+    box-sizing: border-box;
+    padding: 6px;
 }
 
 #container {
