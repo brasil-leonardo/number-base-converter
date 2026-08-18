@@ -17,22 +17,7 @@ for (let base_selector of base_selectors) {
 
 function convertNumberBase(current_base, expected_base, number) {
     let converted_number;
-    switch (expected_base) {
-        case 2:
-            converted_number = parseInt(number, current_base)
-            converted_number = converted_number.toString(2)
-            return converted_number
-        case 8:
-            converted_number = parseInt(number, current_base)
-            converted_number = converted_number.toString(8)
-            return converted_number            
-        case 10:
-            converted_number = parseInt(number, current_base)
-            converted_number = converted_number.toString(10)
-            return converted_number            
-        case 16:
-            converted_number = parseInt(number, current_base)
-            converted_number = converted_number.toString(16)
-            return converted_number            
-    }
+    converted_number = parseInt(number, current_base)
+    converted_number = converted_number.toString(expected_base)
+    return converted_number    
 }
