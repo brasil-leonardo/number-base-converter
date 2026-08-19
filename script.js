@@ -1,92 +1,67 @@
-const base_selectors = document.getElementsByName("base-selector")
+const selectors = document.getElementsByName("selector")
+const fields = document.getElementsByName("field")
 
-// const binary_selector = document.getElementById("binary")
-// const octal_selector = document.getElementById("octal")
-// const decimal_selector = document.getElementById("decimal")
-// const hexadecimal_selector = document.getElementById("hexadecimal")
-
-const input_fields = document.getElementsByName("input-field")
-
-const binary_field = document.getElementById("binary-field")
-const octal_field = document.getElementById("octal-field")
-const decimal_field = document.getElementById("decimal-field")
-const hexadecimal_field = document.getElementById("hexadecimal-field")
-
-for (const base_selector of base_selectors) {
-    base_selector.addEventListener("input", updateBaseSelected)
+for (let selector of selectors) {
+    selector.addEventListener("input", updateBaseSelected)
 }
 
 function updateBaseSelected(e) {
-    const base_selected_id = e.target.id
-    for (const input_field of input_fields) {
-        const input_field_id = input_field.id.replace("-field", "")
-        input_field.disabled = !(base_selected_id === input_field_id)
+    let selector_id = e.target.id
+    let expected_field_id = selector_id.replace("-selector", "-field")
+    for (let field of fields) {
+        if (field.id === expected_field_id) {
+            field.disabled = false
+        } else {
+            field.disabled = true
+        }
     }
 }
 
-// -- Bad method to add listeners in radio input --
-
-// binary_selector.addEventListener("input", () => {
-//     binary_field.disabled = false
-//     octal_field.disabled = true
-//     decimal_field.disabled = true
-//     hexadecimal_field.disabled = true
-// })
-
-// octal_selector.addEventListener("input", () => {
-//     binary_field.disabled = true
-//     octal_field.disabled = false
-//     decimal_field.disabled = true
-//     hexadecimal_field.disabled = true
-// })
-
-// decimal_selector.addEventListener("input", () => {
-//     binary_field.disabled = true
-//     octal_field.disabled = true
-//     decimal_field.disabled = false
-//     hexadecimal_field.disabled = true
-// })
-
-// hexadecimal_selector.addEventListener("input", () => {
-//     binary_field.disabled = true
-//     octal_field.disabled = true
-//     decimal_field.disabled = true
-//     hexadecimal_field.disabled = false
-// })
-
-for (const input_field of input_fields) {
-    input_field.addEventListener("input", updateAllInputFields)
+for (let field of fields) {
+    field.addEventListener("input", updateFields)
 }
 
-function updateAllInputFields(e) {
-    const input_field_id = e.target.id.replace("-field", "")
-    const input_field_value = e.target.value
-    switch (input_field_id) {
-        case "binary":
-            convertAllInputFieldsValue(2, input_field_value)
-            break;
-        case "octal":
-            convertAllInputFieldsValue(8, input_field_value)
-            break;
-        case "decimal":
-            convertAllInputFieldsValue(10, input_field_value)
-            break;
-        case "hexadecimal":
-            convertAllInputFieldsValue(16, input_field_value)
-            break;
+function updateFields(e) {
+    let event_field_id = e.target.id
+    let event_field_base;
+    if (event_field_id === "binary-field") {
+        event_field_base = 2
+    } else if (event_field_id === "octal-field") {
+        event_field_base = 8
+    } else if (event_field_id === "decimal-field") {
+        event_field_base = 10
+    } else if (event_field_id === "hexadecimal-field") {
+        event_field_base = 16
     }
-}
-
-function convertAllInputFieldsValue(current_base, number) {
-    binary_field.value = convertNumberBase(current_base, 2, number)
-    octal_field.value = convertNumberBase(current_base, 8, number)
-    decimal_field.value = convertNumberBase(current_base, 10, number)
-    hexadecimal_field.value = convertNumberBase(current_base, 16, number)
+    let event_field_value = e.target.value
+    for (let field of fields) {
+        if (field.id !== event_field_id) {
+            switch (field.id) {
+                case "binary-field":
+                    field.value = convertNumberBase(event_field_base, 2, event_field_value)
+                    break;
+                case "octal-field":
+                    field.value = convertNumberBase(event_field_base, 8, event_field_value)
+                    break;
+                case "decimal-field":
+                    field.value = convertNumberBase(event_field_base, 10, event_field_value)
+                    break;
+                case "hexadecimal-field":
+                    field.value = convertNumberBase(event_field_base, 16, event_field_value)
+                    break;
+            }
+        }
+    }
 }
 
 function convertNumberBase(current_base, expected_base, number) {
-    let converted_number;
-    converted_number = parseInt(number, current_base)
-    converted_number = converted_number.toString(expected_base)
-    return converted_number    
+    if (!number || number.trim() === "")
+        return ""
+
+    let decimal_number = parseInt(number.trim(), current_base)
+
+    if (!Number.isNaN(decimal_number))
+        return decimal_number.toString(expected_base)
+
+    return ""
 }

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="shortcut icon" href="assets/icons/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/icons/icon.ico" type="image/x-icon">
     <title>Number Base Converter</title>
 </head>
 
 <body>
-    <div id="container">
+    <div class="container">
         <div class="session-container">
             <h1>Number Base Converter</h1>
             <p>
@@ -32,27 +32,27 @@
                 different number systems without the need for manual calculations.
             </p>
         </div>
-        <div id="table-container" class="session-container">
+        <div class="session-container table-container">
             <table>
                 <tr>
-                    <th><label for="binary">Binary</label></th>
-                    <td class="input-selector"><input checked type="radio" name="base-selector" id="binary"></td>
-                    <td><input type="text" name="input-field" id="binary-field"></td>
+                    <th><label for="binary-selector">Binary</label></th>
+                    <td class="selector"><input checked type="radio" name="selector" id="binary-selector"></td>
+                    <td><input class="field" type="text" name="field" id="binary-field"></td>
                 </tr>
                 <tr>
-                    <th><label for="octal">Octal</label></th>
-                    <td class="input-selector"><input type="radio" name="base-selector" id="octal"></td>
-                    <td><input disabled type="text" name="input-field" id="octal-field"></td>
+                    <th><label for="octal-selector">Octal</label></th>
+                    <td class="selector"><input type="radio" name="selector" id="octal-selector"></td>
+                    <td><input class="field" disabled type="text" name="field" id="octal-field"></td>
                 </tr>
                 <tr>
-                    <th><label for="decimal">Decimal</label></th>
-                    <td class="input-selector"><input type="radio" name="base-selector" id="decimal"></td>
-                    <td><input disabled type="text" name="input-field" id="decimal-field"></td>
+                    <th><label for="decimal-selector">Decimal</label></th>
+                    <td class="selector"><input type="radio" name="selector" id="decimal-selector"></td>
+                    <td><input class="field" disabled type="text" name="field" id="decimal-field"></td>
                 </tr>
                 <tr>
-                    <th><label for="hexadecimal">Hexadecimal</label></th>
-                    <td class="input-selector"><input type="radio" name="base-selector" id="hexadecimal"></td>
-                    <td><input disabled type="text" name="input-field" id="hexadecimal-field"></td>
+                    <th><label for="hexadecimal-selector">Hexadecimal</label></th>
+                    <td class="selector"><input type="radio" name="selector" id="hexadecimal-selector"></td>
+                    <td><input class="field" disabled type="text" name="field" id="hexadecimal-field"></td>
                 </tr>
             </table>
         </div>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: Abel;
-    src: url(assets/fonts/Abel-Regular.ttf);
+    src: url(./assets/fonts/Abel-Regular.ttf);
 }
 
 * {
@@ -48,14 +48,7 @@ td {
     padding-bottom: 10px;
 }
 
-input[type=text] {
-    width: 100%;
-    text-align: end;
-    box-sizing: border-box;
-    padding: 6px;
-}
-
-#container {
+.container {
     height: 60dvh;
     width: 50dvw;
     padding: 15px;
@@ -76,11 +69,18 @@ input[type=text] {
     row-gap: 12px;
 }
 
-.input-selector {
+.table-container {
+    align-self: center;
+    padding-inline: 50px;
+}
+
+.selector {
     width: 1%;
 }
 
-#table-container {
-    align-self: center;
-    padding-inline: 50px;
+.field {
+    width: 100%;
+    text-align: end;
+    box-sizing: border-box;
+    padding: 6px;
 }
